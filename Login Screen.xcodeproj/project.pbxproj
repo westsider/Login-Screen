@@ -12,6 +12,9 @@
 		0D502DFC21232CDA0063C304 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D502DFA21232CDA0063C304 /* Main.storyboard */; };
 		0D502DFE21232CDA0063C304 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D502DFD21232CDA0063C304 /* Assets.xcassets */; };
 		0D502E0121232CDA0063C304 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D502DFF21232CDA0063C304 /* LaunchScreen.storyboard */; };
+		0D502E09212331F70063C304 /* Alert VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D502E08212331F70063C304 /* Alert VC.swift */; };
+		0D502E0B212334730063C304 /* Login Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D502E0A212334730063C304 /* Login Helpers.swift */; };
+		F71BD80A87AE1CB7579808A9 /* Pods_Login_Screen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D835BAF1AA36BFD0E7A6567D /* Pods_Login_Screen.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,11 @@
 		0D502DFD21232CDA0063C304 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D502E0021232CDA0063C304 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D502E0221232CDA0063C304 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D502E08212331F70063C304 /* Alert VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert VC.swift"; sourceTree = "<group>"; };
+		0D502E0A212334730063C304 /* Login Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login Helpers.swift"; sourceTree = "<group>"; };
+		6820BA10B5C4874D1F690D18 /* Pods-Login Screen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login Screen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Login Screen/Pods-Login Screen.release.xcconfig"; sourceTree = "<group>"; };
+		D835BAF1AA36BFD0E7A6567D /* Pods_Login_Screen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Login_Screen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F38A6CFB03AF078EE31DF0B4 /* Pods-Login Screen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login Screen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Login Screen/Pods-Login Screen.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F71BD80A87AE1CB7579808A9 /* Pods_Login_Screen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,8 @@
 			children = (
 				0D502DF521232CDA0063C304 /* Login Screen */,
 				0D502DF421232CDA0063C304 /* Products */,
+				EAD168EB77CB4EA628F22787 /* Pods */,
+				4CA88F9FA79E809258E5EC5D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +65,33 @@
 		0D502DF521232CDA0063C304 /* Login Screen */ = {
 			isa = PBXGroup;
 			children = (
-				0D502DF621232CDA0063C304 /* AppDelegate.swift */,
-				0D502DF821232CDA0063C304 /* ViewController.swift */,
 				0D502DFA21232CDA0063C304 /* Main.storyboard */,
+				0D502DF821232CDA0063C304 /* ViewController.swift */,
+				0D502E0A212334730063C304 /* Login Helpers.swift */,
+				0D502E08212331F70063C304 /* Alert VC.swift */,
 				0D502DFD21232CDA0063C304 /* Assets.xcassets */,
 				0D502DFF21232CDA0063C304 /* LaunchScreen.storyboard */,
+				0D502DF621232CDA0063C304 /* AppDelegate.swift */,
 				0D502E0221232CDA0063C304 /* Info.plist */,
 			);
 			path = "Login Screen";
+			sourceTree = "<group>";
+		};
+		4CA88F9FA79E809258E5EC5D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D835BAF1AA36BFD0E7A6567D /* Pods_Login_Screen.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EAD168EB77CB4EA628F22787 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F38A6CFB03AF078EE31DF0B4 /* Pods-Login Screen.debug.xcconfig */,
+				6820BA10B5C4874D1F690D18 /* Pods-Login Screen.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D502E0521232CDA0063C304 /* Build configuration list for PBXNativeTarget "Login Screen" */;
 			buildPhases = (
+				059A8B7BDBEBB0BCCAC7864F /* [CP] Check Pods Manifest.lock */,
 				0D502DEF21232CDA0063C304 /* Sources */,
 				0D502DF021232CDA0063C304 /* Frameworks */,
 				0D502DF121232CDA0063C304 /* Resources */,
+				C81EE8FFC27BECCBAEEAC62E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,6 +162,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		059A8B7BDBEBB0BCCAC7864F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Login Screen-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C81EE8FFC27BECCBAEEAC62E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Login Screen/Pods-Login Screen-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Login Screen/Pods-Login Screen-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0D502DEF21232CDA0063C304 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -137,6 +208,8 @@
 			files = (
 				0D502DF921232CDA0063C304 /* ViewController.swift in Sources */,
 				0D502DF721232CDA0063C304 /* AppDelegate.swift in Sources */,
+				0D502E0B212334730063C304 /* Login Helpers.swift in Sources */,
+				0D502E09212331F70063C304 /* Alert VC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,15 +351,13 @@
 		};
 		0D502E0621232CDA0063C304 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F38A6CFB03AF078EE31DF0B4 /* Pods-Login Screen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22U4CL887R;
 				INFOPLIST_FILE = "Login Screen/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.tradestrat.Login-Screen";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -296,15 +367,13 @@
 		};
 		0D502E0721232CDA0063C304 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6820BA10B5C4874D1F690D18 /* Pods-Login Screen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22U4CL887R;
 				INFOPLIST_FILE = "Login Screen/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.tradestrat.Login-Screen";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
