@@ -17,16 +17,24 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var firebaseAuthSystem = FirebaseAuthSystem()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    @IBAction func createAccountButtonTapped(_ sender: UIButton) {
+        checkUserInput(signUp: true)
+    }
+    
     @IBAction func loginButtonTapped(_ sender: UIButton) {
+        checkUserInput(signUp: false)
+    }
+    
+    func checkUserInput(signUp:Bool) {
         
         do {
-            try login()
-            //MARK: - Todo - Transition to next screen
-            Alert.showBasic(title: "Trasition", message: "To next screen.")
+            try loginOr(signUp: signUp)
         } catch LoginError.incompleteForm {
             Alert.showBasic(title: "Incomplete Form", message: "Please FIll out both email and password.")
         } catch LoginError.invalidEmail {
@@ -38,7 +46,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func login() throws {
+    func loginOr(signUp:Bool) throws {
         
         let email = emailTextField.text!
         let password = passwordTextField.text!
@@ -54,6 +62,13 @@ class LoginViewController: UIViewController {
         if password.count < 6 {
             throw LoginError.incorrectPasswordLength
         }
-        //MARK: - Todo - Log into server
+
+        if signUp {
+            firebaseAuthSystem.createNewUser(email: email, passWord: password)
+        } else {
+            firebaseAuthSystem.authExistingUser(email: email, passWord: password)
+        }
     }
+    
+
 }

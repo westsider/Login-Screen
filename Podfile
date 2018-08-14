@@ -7,4 +7,6 @@ target 'Login Screen' do
 
   # Pods for Login Screen
   pod 'IQKeyboardManagerSwift'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 end

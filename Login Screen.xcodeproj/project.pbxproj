@@ -14,6 +14,8 @@
 		0D502E0121232CDA0063C304 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D502DFF21232CDA0063C304 /* LaunchScreen.storyboard */; };
 		0D502E09212331F70063C304 /* Alert VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D502E08212331F70063C304 /* Alert VC.swift */; };
 		0D502E0B212334730063C304 /* Login Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D502E0A212334730063C304 /* Login Helpers.swift */; };
+		0DBCAAEE21234C88000AD4AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DBCAAED21234C88000AD4AA /* GoogleService-Info.plist */; };
+		0DBCAAF021234EB7000AD4AA /* FireBase Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBCAAEF21234EB7000AD4AA /* FireBase Auth.swift */; };
 		F71BD80A87AE1CB7579808A9 /* Pods_Login_Screen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D835BAF1AA36BFD0E7A6567D /* Pods_Login_Screen.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		0D502E0221232CDA0063C304 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D502E08212331F70063C304 /* Alert VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert VC.swift"; sourceTree = "<group>"; };
 		0D502E0A212334730063C304 /* Login Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login Helpers.swift"; sourceTree = "<group>"; };
+		0DBCAAED21234C88000AD4AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0DBCAAEF21234EB7000AD4AA /* FireBase Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FireBase Auth.swift"; sourceTree = "<group>"; };
 		6820BA10B5C4874D1F690D18 /* Pods-Login Screen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login Screen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Login Screen/Pods-Login Screen.release.xcconfig"; sourceTree = "<group>"; };
 		D835BAF1AA36BFD0E7A6567D /* Pods_Login_Screen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Login_Screen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F38A6CFB03AF078EE31DF0B4 /* Pods-Login Screen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login Screen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Login Screen/Pods-Login Screen.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,10 +71,12 @@
 			children = (
 				0D502DFA21232CDA0063C304 /* Main.storyboard */,
 				0D502DF821232CDA0063C304 /* ViewController.swift */,
+				0DBCAAEF21234EB7000AD4AA /* FireBase Auth.swift */,
 				0D502E0A212334730063C304 /* Login Helpers.swift */,
 				0D502E08212331F70063C304 /* Alert VC.swift */,
 				0D502DFD21232CDA0063C304 /* Assets.xcassets */,
 				0D502DFF21232CDA0063C304 /* LaunchScreen.storyboard */,
+				0DBCAAED21234C88000AD4AA /* GoogleService-Info.plist */,
 				0D502DF621232CDA0063C304 /* AppDelegate.swift */,
 				0D502E0221232CDA0063C304 /* Info.plist */,
 			);
@@ -155,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D502E0121232CDA0063C304 /* LaunchScreen.storyboard in Resources */,
+				0DBCAAEE21234C88000AD4AA /* GoogleService-Info.plist in Resources */,
 				0D502DFE21232CDA0063C304 /* Assets.xcassets in Resources */,
 				0D502DFC21232CDA0063C304 /* Main.storyboard in Resources */,
 			);
@@ -188,11 +195,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Login Screen/Pods-Login Screen-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -210,6 +223,7 @@
 				0D502DF721232CDA0063C304 /* AppDelegate.swift in Sources */,
 				0D502E0B212334730063C304 /* Login Helpers.swift in Sources */,
 				0D502E09212331F70063C304 /* Alert VC.swift in Sources */,
+				0DBCAAF021234EB7000AD4AA /* FireBase Auth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +371,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22U4CL887R;
 				INFOPLIST_FILE = "Login Screen/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.tradestrat.Login-Screen";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -373,7 +390,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22U4CL887R;
 				INFOPLIST_FILE = "Login Screen/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.tradestrat.Login-Screen";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

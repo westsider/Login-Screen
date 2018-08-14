@@ -18,38 +18,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="OK2-fP-Urp">
-                                <rect key="frame" x="62.5" y="288.5" width="250" height="90"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="OK2-fP-Urp">
+                                <rect key="frame" x="62.5" y="278.5" width="250" height="110"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="email" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="atP-ds-3B0">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="26.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="23"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bqg-8H-NAS">
-                                        <rect key="frame" x="0.0" y="32.5" width="250" height="26.5"/>
+                                        <rect key="frame" x="0.0" y="29" width="250" height="23"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2P-aN-6py">
-                                        <rect key="frame" x="0.0" y="65" width="250" height="25"/>
+                                        <rect key="frame" x="0.0" y="58" width="250" height="23"/>
                                         <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Log In">
+                                        <state key="normal" title="Sign In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Csm-X7-Xt9"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpa-8P-2i9">
+                                        <rect key="frame" x="0.0" y="87" width="250" height="23"/>
+                                        <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Create Account">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createAccountButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JKY-U4-pWI"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="wpa-8P-2i9" firstAttribute="leading" secondItem="OK2-fP-Urp" secondAttribute="leading" id="0EX-aD-tSk"/>
                                     <constraint firstItem="bqg-8H-NAS" firstAttribute="leading" secondItem="OK2-fP-Urp" secondAttribute="leading" id="0do-8v-GCv"/>
                                     <constraint firstAttribute="trailing" secondItem="h2P-aN-6py" secondAttribute="trailing" id="9HB-5d-wlL"/>
                                     <constraint firstItem="atP-ds-3B0" firstAttribute="leading" secondItem="OK2-fP-Urp" secondAttribute="leading" id="GR1-ee-sJG"/>
                                     <constraint firstAttribute="trailing" secondItem="atP-ds-3B0" secondAttribute="trailing" id="OdY-26-XXT"/>
-                                    <constraint firstAttribute="height" constant="90" id="mBq-9B-lGv"/>
+                                    <constraint firstAttribute="trailing" secondItem="wpa-8P-2i9" secondAttribute="trailing" id="RxG-6o-SZv"/>
+                                    <constraint firstAttribute="height" constant="110" id="mBq-9B-lGv"/>
                                     <constraint firstItem="h2P-aN-6py" firstAttribute="leading" secondItem="OK2-fP-Urp" secondAttribute="leading" id="oxw-Pa-XdE"/>
                                     <constraint firstAttribute="trailing" secondItem="bqg-8H-NAS" secondAttribute="trailing" id="uTd-RN-ITu"/>
                                     <constraint firstAttribute="width" constant="250" id="y5q-Zu-Pxw"/>
