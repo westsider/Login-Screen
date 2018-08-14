@@ -9,6 +9,11 @@
     import IQKeyboardManagerSwift
     IQKeyboardManager.shared.enable = true  */
 
+// completion handler for login
+// delegates to show result
+// progress bar in main UI
+// error at top of ui
+
 import UIKit
 
 class LoginViewController: UIViewController {
