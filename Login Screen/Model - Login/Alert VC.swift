@@ -6,9 +6,6 @@
 //  Copyright © 2018 Warren Hansen. All rights reserved.
 //
 
-import Foundation
-
-import Foundation
 import UIKit
 
 class Alert {

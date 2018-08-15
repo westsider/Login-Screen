@@ -75,11 +75,7 @@
 			children = (
 				0D502DFA21232CDA0063C304 /* Main.storyboard */,
 				0D502DF821232CDA0063C304 /* ViewController.swift */,
-				0DB71D8A2123E516006802CC /* User.swift */,
-				0DB71D882123D0EF006802CC /* TextField Parser.swift */,
-				0DBCAAEF21234EB7000AD4AA /* FireBase Auth.swift */,
-				0D502E0A212334730063C304 /* Login Helpers.swift */,
-				0D502E08212331F70063C304 /* Alert VC.swift */,
+				0DB71D8C2123E7D3006802CC /* Model - Login */,
 				0D502DFD21232CDA0063C304 /* Assets.xcassets */,
 				0D502DFF21232CDA0063C304 /* LaunchScreen.storyboard */,
 				0DBCAAED21234C88000AD4AA /* GoogleService-Info.plist */,
@@ -87,6 +83,18 @@
 				0D502E0221232CDA0063C304 /* Info.plist */,
 			);
 			path = "Login Screen";
+			sourceTree = "<group>";
+		};
+		0DB71D8C2123E7D3006802CC /* Model - Login */ = {
+			isa = PBXGroup;
+			children = (
+				0DB71D8A2123E516006802CC /* User.swift */,
+				0DB71D882123D0EF006802CC /* TextField Parser.swift */,
+				0DBCAAEF21234EB7000AD4AA /* FireBase Auth.swift */,
+				0D502E0A212334730063C304 /* Login Helpers.swift */,
+				0D502E08212331F70063C304 /* Alert VC.swift */,
+			);
+			path = "Model - Login";
 			sourceTree = "<group>";
 		};
 		4CA88F9FA79E809258E5EC5D /* Frameworks */ = {

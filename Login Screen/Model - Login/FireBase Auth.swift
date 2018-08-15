@@ -19,14 +19,12 @@ struct FirebaseAuthSystem {
         Auth.auth().createUser(withEmail: email, password: passWord) { (user, error) in
             
             if (user != nil) {
-                print("\nWe created a user!\n")
-                Alert.showBasic(title: "Awesome", message: "Created  user \(email)")
+                Alert.showBasic(title: "Awesome", message: "\(email) account created.")
                 if let user:String = user?.description {
                     debugPrint(user)
                 }
                 
             } else {
-                print(error?.localizedDescription as Any)
                 if let error:String = error?.localizedDescription {
                     Alert.showBasic(title: "Warning", message: error)
                 }
@@ -38,15 +36,11 @@ struct FirebaseAuthSystem {
         
         Auth.auth().signIn(withEmail: email, password: passWord) { (user, error) in
             if (user != nil) {
-
-                print("\nWe logged in a \(email)!\n")
-                Alert.showBasic(title: "Awesome", message: "We logged in \(email)!")
-                
+                Alert.showBasic(title: "Awesome", message: "\(email), you've been logged in.")
                 if let user:String = user?.description {
                     debugPrint(user)
                 }
             } else {
-                print(error?.localizedDescription as Any)
                 if let error:String = error?.localizedDescription {
                     Alert.showBasic(title: "Warning", message: error)
                 }
