@@ -18,10 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blue2" translatesAutoresizingMaskIntoConstraints="NO" id="tqP-hY-QGc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlueDim 2" translatesAutoresizingMaskIntoConstraints="NO" id="tqP-hY-QGc">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="OK2-fP-Urp">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="OK2-fP-Urp">
                                 <rect key="frame" x="62.5" y="158.5" width="250" height="350"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to NASA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qot-n1-ftX">
@@ -31,36 +31,52 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNc-ye-ahr">
-                                        <rect key="frame" x="0.0" y="61.5" width="250" height="20"/>
+                                        <rect key="frame" x="0.0" y="56.5" width="250" height="20"/>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="8" bottom="0.0" right="0.0"/>
                                         <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="user@mail.com" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="atP-ds-3B0">
-                                        <rect key="frame" x="0.0" y="103.5" width="250" height="30"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="328-j0-XFM" userLabel="lineView">
+                                        <rect key="frame" x="0.0" y="93.5" width="250" height="1"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="RAx-sm-j4m"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="user@mail.com" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="atP-ds-3B0">
+                                        <rect key="frame" x="0.0" y="111.5" width="250" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chg-0r-uqj">
-                                        <rect key="frame" x="0.0" y="155.5" width="250" height="20"/>
+                                        <rect key="frame" x="0.0" y="158.5" width="250" height="20"/>
+                                        <edgeInsets key="layoutMargins" top="0.0" left="8" bottom="0.0" right="0.0"/>
                                         <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bqg-8H-NAS">
-                                        <rect key="frame" x="0.0" y="197" width="250" height="30"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BZN-Yh-Ya3" userLabel="lineView">
+                                        <rect key="frame" x="0.0" y="195.5" width="250" height="1"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Jrb-Fm-i4h"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bqg-8H-NAS">
+                                        <rect key="frame" x="0.0" y="213.5" width="250" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2P-aN-6py">
-                                        <rect key="frame" x="0.0" y="249" width="250" height="40"/>
+                                        <rect key="frame" x="0.0" y="260.5" width="250" height="36.5"/>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.12344820205479452" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="20"/>
-                                        <state key="normal" title="Sign In">
+                                        <state key="normal" title="Log In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -68,10 +84,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpa-8P-2i9">
-                                        <rect key="frame" x="0.0" y="311" width="250" height="39"/>
+                                        <rect key="frame" x="0.0" y="314" width="250" height="36"/>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.12136130136986302" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="19"/>
-                                        <state key="normal" title="New Account">
+                                        <state key="normal" title="Register">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -84,10 +100,13 @@
                                     <constraint firstItem="bqg-8H-NAS" firstAttribute="leading" secondItem="OK2-fP-Urp" secondAttribute="leading" id="0do-8v-GCv"/>
                                     <constraint firstAttribute="trailing" secondItem="h2P-aN-6py" secondAttribute="trailing" id="9HB-5d-wlL"/>
                                     <constraint firstItem="atP-ds-3B0" firstAttribute="leading" secondItem="OK2-fP-Urp" secondAttribute="leading" id="GR1-ee-sJG"/>
+                                    <constraint firstAttribute="trailing" secondItem="328-j0-XFM" secondAttribute="trailing" id="GmQ-Ja-Be6"/>
+                                    <constraint firstItem="wpa-8P-2i9" firstAttribute="height" secondItem="h2P-aN-6py" secondAttribute="height" id="L1o-fJ-VYp"/>
                                     <constraint firstAttribute="trailing" secondItem="atP-ds-3B0" secondAttribute="trailing" id="OdY-26-XXT"/>
                                     <constraint firstAttribute="trailing" secondItem="wpa-8P-2i9" secondAttribute="trailing" id="RxG-6o-SZv"/>
                                     <constraint firstAttribute="height" constant="350" id="mBq-9B-lGv"/>
                                     <constraint firstItem="h2P-aN-6py" firstAttribute="leading" secondItem="OK2-fP-Urp" secondAttribute="leading" id="oxw-Pa-XdE"/>
+                                    <constraint firstItem="328-j0-XFM" firstAttribute="leading" secondItem="OK2-fP-Urp" secondAttribute="leading" id="sn4-D5-GVt"/>
                                     <constraint firstAttribute="trailing" secondItem="bqg-8H-NAS" secondAttribute="trailing" id="uTd-RN-ITu"/>
                                     <constraint firstAttribute="width" constant="250" id="y5q-Zu-Pxw"/>
                                 </constraints>
@@ -115,6 +134,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Blue2" width="176" height="286"/>
+        <image name="BlueDim 2" width="176" height="286"/>
     </resources>
 </document>

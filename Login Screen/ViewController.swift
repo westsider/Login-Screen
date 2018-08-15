@@ -9,9 +9,9 @@
     import IQKeyboardManagerSwift
     IQKeyboardManager.shared.enable = true  */
 
+// progress bar in main UI button
 // completion handler for login
 // delegates to show result
-// progress bar in main UI
 // error at top of ui
 
 import UIKit
@@ -26,6 +26,10 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
     }
     
     @IBAction func createAccountButtonTapped(_ sender: UIButton) {
