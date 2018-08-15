@@ -11,10 +11,12 @@
 
 // add progress bar
 // add error at top of ui
-// completion handler for login then auth manually
 // delegates to show progress bar or error
 // annimation to show text fields
 // handle horizontal
+// pan background
+
+// possible endpoints Nasa Data https://api.nasa.gov/api.html#authentication
 
 
 import UIKit
