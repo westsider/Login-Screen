@@ -16,6 +16,7 @@
 		0D502E0B212334730063C304 /* Login Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D502E0A212334730063C304 /* Login Helpers.swift */; };
 		0DB71D892123D0EF006802CC /* TextField Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB71D882123D0EF006802CC /* TextField Parser.swift */; };
 		0DB71D8B2123E516006802CC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB71D8A2123E516006802CC /* User.swift */; };
+		0DB71D8E212488E3006802CC /* View Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB71D8D212488E3006802CC /* View Attributes.swift */; };
 		0DBCAAEE21234C88000AD4AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DBCAAED21234C88000AD4AA /* GoogleService-Info.plist */; };
 		0DBCAAF021234EB7000AD4AA /* FireBase Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBCAAEF21234EB7000AD4AA /* FireBase Auth.swift */; };
 		F71BD80A87AE1CB7579808A9 /* Pods_Login_Screen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D835BAF1AA36BFD0E7A6567D /* Pods_Login_Screen.framework */; };
@@ -33,6 +34,7 @@
 		0D502E0A212334730063C304 /* Login Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login Helpers.swift"; sourceTree = "<group>"; };
 		0DB71D882123D0EF006802CC /* TextField Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField Parser.swift"; sourceTree = "<group>"; };
 		0DB71D8A2123E516006802CC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0DB71D8D212488E3006802CC /* View Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View Attributes.swift"; sourceTree = "<group>"; };
 		0DBCAAED21234C88000AD4AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0DBCAAEF21234EB7000AD4AA /* FireBase Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FireBase Auth.swift"; sourceTree = "<group>"; };
 		6820BA10B5C4874D1F690D18 /* Pods-Login Screen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login Screen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Login Screen/Pods-Login Screen.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				0DBCAAEF21234EB7000AD4AA /* FireBase Auth.swift */,
 				0D502E0A212334730063C304 /* Login Helpers.swift */,
 				0D502E08212331F70063C304 /* Alert VC.swift */,
+				0DB71D8D212488E3006802CC /* View Attributes.swift */,
 			);
 			path = "Model - Login";
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			files = (
 				0D502DF921232CDA0063C304 /* ViewController.swift in Sources */,
 				0DB71D892123D0EF006802CC /* TextField Parser.swift in Sources */,
+				0DB71D8E212488E3006802CC /* View Attributes.swift in Sources */,
 				0D502DF721232CDA0063C304 /* AppDelegate.swift in Sources */,
 				0D502E0B212334730063C304 /* Login Helpers.swift in Sources */,
 				0D502E09212331F70063C304 /* Alert VC.swift in Sources */,
