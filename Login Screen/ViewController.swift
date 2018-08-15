@@ -19,26 +19,23 @@
 
 import UIKit
 
-struct User {
-    let email: String
-    let password: String
-}
-
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
     
+    let textFieldParser = TextFieldParser()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func createAccountButtonTapped(_ sender: UIButton) {
-        TextFieldParser().checkInputAndLogin(signUp: true, email: emailTextField.text!, password: passwordTextField.text!)
+        textFieldParser.checkInputAndLogin(signUp: true, user: User(email:  emailTextField.text!, password: passwordTextField.text!))
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        TextFieldParser().checkInputAndLogin(signUp: false, email: emailTextField.text!, password: passwordTextField.text!)
+        textFieldParser.checkInputAndLogin(signUp: false, user: User(email:  emailTextField.text!, password: passwordTextField.text!))
     }
 }

@@ -20,7 +20,7 @@ struct FirebaseAuthSystem {
             
             if (user != nil) {
                 print("\nWe created a user!\n")
-                Alert.showBasic(title: "Awesome", message: "We created a user!")
+                Alert.showBasic(title: "Awesome", message: "Created  user \(email)")
                 if let user:String = user?.description {
                     debugPrint(user)
                 }
@@ -31,17 +31,17 @@ struct FirebaseAuthSystem {
                     Alert.showBasic(title: "Warning", message: error)
                 }
             }
-            
         }
-        
     }
     
     func authExistingUser(email:String, passWord:String) {
         
         Auth.auth().signIn(withEmail: email, password: passWord) { (user, error) in
             if (user != nil) {
-                print("\nWe logged in a user!\n")
-                Alert.showBasic(title: "Awesome", message: "We logged in a user!")
+
+                print("\nWe logged in a \(email)!\n")
+                Alert.showBasic(title: "Awesome", message: "We logged in \(email)!")
+                
                 if let user:String = user?.description {
                     debugPrint(user)
                 }
