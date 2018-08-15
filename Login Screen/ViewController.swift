@@ -9,12 +9,20 @@
     import IQKeyboardManagerSwift
     IQKeyboardManager.shared.enable = true  */
 
-// progress bar in main UI button
-// completion handler for login
-// delegates to show result
-// error at top of ui
+// add progress bar
+// add error at top of ui
+// completion handler for login then auth manually
+// delegates to show progress bar or error
+// annimation to show text fields
+// handle horizontal
+
 
 import UIKit
+
+struct User {
+    let email: String
+    let password: String
+}
 
 class LoginViewController: UIViewController {
     
@@ -22,62 +30,15 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
-    var firebaseAuthSystem = FirebaseAuthSystem()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-    }
-    
     @IBAction func createAccountButtonTapped(_ sender: UIButton) {
-        checkUserInput(signUp: true)
+        TextFieldParser().checkInputAndLogin(signUp: true, email: emailTextField.text!, password: passwordTextField.text!)
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        checkUserInput(signUp: false)
+        TextFieldParser().checkInputAndLogin(signUp: false, email: emailTextField.text!, password: passwordTextField.text!)
     }
-    
-    func checkUserInput(signUp:Bool) {
-        
-        do {
-            try loginOr(signUp: signUp)
-        } catch LoginError.incompleteForm {
-            Alert.showBasic(title: "Incomplete Form", message: "Please FIll out both email and password.")
-        } catch LoginError.invalidEmail {
-            Alert.showBasic(title: "Invalid Email Format", message: "Please make sure you format your email correctly")
-        } catch LoginError.incorrectPasswordLength {
-            Alert.showBasic(title: "Password Too Short", message: "Password should be at leat 6 characters.")
-        } catch {
-            Alert.showBasic(title: "Unable To Login", message: "There was an error attempting to login")
-        }
-    }
-    
-    func loginOr(signUp:Bool) throws {
-        
-        let email = emailTextField.text!
-        let password = passwordTextField.text!
-        
-        if email.isEmpty || password.isEmpty {
-            throw LoginError.invalidEmail
-        }
-        
-        if !email.isValidEmail {
-            throw LoginError.invalidEmail
-        }
-        
-        if password.count < 6 {
-            throw LoginError.incorrectPasswordLength
-        }
-
-        if signUp {
-            firebaseAuthSystem.createNewUser(email: email, passWord: password)
-        } else {
-            firebaseAuthSystem.authExistingUser(email: email, passWord: password)
-        }
-    }
-    
-
 }
