@@ -10,10 +10,12 @@
     IQKeyboardManager.shared.enable = true  */
 
 // add progress bar
+//      view
+//      label
+//      progress bar
+//      gesture recog
 // add error at top of ui
 // delegates to show progress bar or error
-// annimation to show text fields
-// handle horizontal
 // pan background
 
 // possible endpoints Nasa Data https://api.nasa.gov/api.html#authentication
@@ -31,7 +33,9 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordHeightConstraing: NSLayoutConstraint!
     
-    //@IBOutlet weak var mainStackViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var progressBar: UIProgressView!
+    
+    @IBOutlet weak var logInLabel: UILabel!
     
     let textFieldParser = TextFieldParser()
     
@@ -44,16 +48,57 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         emailHeightConstraint.constant = 0
         passwordHeightConstraing.constant = 0
-//        mainStackViewHeight.constant = start
     }
     
     @IBAction func createAccountButtonTapped(_ sender: UIButton) {
         textFieldParser.checkInputAndLogin(signUp: true, user: User(email:  emailTextField.text!, password: passwordTextField.text!))
     }
     
-    @IBAction func loginButtonTapped(_ sender: UIButton) {
+    @IBAction func logInViewTapped(_ sender: UITapGestureRecognizer) {
+        startNetworkCallAnnimation()
         textFieldParser.checkInputAndLogin(signUp: false, user: User(email:  emailTextField.text!, password: passwordTextField.text!))
     }
+    
+    //MARK: - Handle login progress bar
+    func startNetworkCallAnnimation() {
+        
+        logInLabel.text = "Signing In..."
+        view.layoutIfNeeded()
+        setProgress(percent: 0.7)
+        
+        UIView.animate(
+            withDuration: 1.5,
+            delay: 0.0,
+            animations: {
+                self.view.layoutIfNeeded()
+        }) { (finished) in
+            if finished {
+                //self.finishNetworkCall()
+            }
+        }
+    }
+    
+    func finishNetworkCall() {
+        
+        logInLabel.text = "Connected"
+        setProgress(percent: 1.0)
+        
+        UIView.animate(
+            withDuration: 0.25,
+            delay: 0.0,
+            usingSpringWithDamping: 5.5,
+            initialSpringVelocity: 2.0,
+            options: [],
+            animations: {
+                self.view.layoutIfNeeded()
+        })
+    }
+    
+    func setProgress(percent:Float) {
+        progressBar.isHidden = false
+        progressBar.progress = percent
+    }
+
     
     @IBAction func expandTextfieldAction(_ sender: UIButton) {
         showAndHideTextFields(now: showFieldsState)
@@ -65,11 +110,9 @@ class LoginViewController: UIViewController {
         if now {
             emailHeightConstraint.constant = 30
             passwordHeightConstraing.constant = 30
-           // mainStackViewHeight.constant = finish
         } else {
             emailHeightConstraint.constant = 0
             passwordHeightConstraing.constant = 0
-            //mainStackViewHeight.constant = start
         }
         
         UIView.animate(

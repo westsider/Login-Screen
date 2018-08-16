@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Rd2-Dq-EA8" userLabel="All Stack View">
-                                <rect key="frame" x="62.5" y="176" width="250" height="316.5"/>
+                                <rect key="frame" x="62.5" y="175.5" width="250" height="316.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Welcome to NASA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qot-n1-ftX">
                                         <rect key="frame" x="0.0" y="0.0" width="222" height="36.5"/>
@@ -86,17 +86,37 @@
                                         <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2P-aN-6py">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y9l-Nc-HoZ" userLabel="Log In View">
                                         <rect key="frame" x="0.0" y="228.5" width="250" height="40"/>
+                                        <subviews>
+                                            <progressView opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HaV-My-INO">
+                                                <rect key="frame" x="-0.5" y="0.0" width="250" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <gestureRecognizers/>
+                                                <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="kdL-XE-3pW" appends="YES" id="LH1-01-z72"/>
+                                                </connections>
+                                            </progressView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9F-Du-LEi">
+                                                <rect key="frame" x="97" y="7" width="55" height="27"/>
+                                                <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="19"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="20"/>
-                                        <state key="normal" title="Log In">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Csm-X7-Xt9"/>
-                                        </connections>
-                                    </button>
+                                        <constraints>
+                                            <constraint firstItem="HaV-My-INO" firstAttribute="centerY" secondItem="y9l-Nc-HoZ" secondAttribute="centerY" id="3sI-Gb-F3f"/>
+                                            <constraint firstItem="E9F-Du-LEi" firstAttribute="centerY" secondItem="y9l-Nc-HoZ" secondAttribute="centerY" id="JSF-qm-PhI"/>
+                                            <constraint firstAttribute="height" constant="40" id="frh-Ei-iPK"/>
+                                            <constraint firstItem="HaV-My-INO" firstAttribute="height" secondItem="y9l-Nc-HoZ" secondAttribute="height" id="gyF-0c-ipb"/>
+                                            <constraint firstItem="HaV-My-INO" firstAttribute="centerX" secondItem="y9l-Nc-HoZ" secondAttribute="centerX" id="ipg-rX-iej"/>
+                                            <constraint firstItem="HaV-My-INO" firstAttribute="width" secondItem="y9l-Nc-HoZ" secondAttribute="width" id="jhg-Qv-Qe1"/>
+                                            <constraint firstItem="E9F-Du-LEi" firstAttribute="centerX" secondItem="y9l-Nc-HoZ" secondAttribute="centerX" id="zyd-vZ-gJf"/>
+                                        </constraints>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="747" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpa-8P-2i9">
                                         <rect key="frame" x="0.0" y="277.5" width="250" height="39"/>
                                         <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
@@ -115,14 +135,14 @@
                                     <constraint firstAttribute="trailing" secondItem="atP-ds-3B0" secondAttribute="trailing" id="B9R-hW-e4f"/>
                                     <constraint firstItem="bqg-8H-NAS" firstAttribute="leading" secondItem="Rd2-Dq-EA8" secondAttribute="leading" id="Bmo-nd-eUo"/>
                                     <constraint firstItem="jfc-Ng-XT9" firstAttribute="leading" secondItem="Rd2-Dq-EA8" secondAttribute="leading" id="DLK-do-8Gq"/>
-                                    <constraint firstItem="h2P-aN-6py" firstAttribute="leading" secondItem="Rd2-Dq-EA8" secondAttribute="leading" id="Hxw-8e-Efc"/>
+                                    <constraint firstAttribute="trailing" secondItem="y9l-Nc-HoZ" secondAttribute="trailing" id="HVR-So-zOn"/>
                                     <constraint firstItem="ceR-N6-Szh" firstAttribute="leading" secondItem="Rd2-Dq-EA8" secondAttribute="leading" id="KzB-HY-Gjc"/>
                                     <constraint firstItem="atP-ds-3B0" firstAttribute="leading" secondItem="Rd2-Dq-EA8" secondAttribute="leading" id="MKb-h0-o5L"/>
                                     <constraint firstItem="wpa-8P-2i9" firstAttribute="leading" secondItem="Rd2-Dq-EA8" secondAttribute="leading" id="U3g-aO-NFp"/>
                                     <constraint firstAttribute="trailing" secondItem="jfc-Ng-XT9" secondAttribute="trailing" id="b7I-Ac-lPW"/>
-                                    <constraint firstAttribute="trailing" secondItem="h2P-aN-6py" secondAttribute="trailing" id="bMf-la-Wof"/>
                                     <constraint firstAttribute="trailing" secondItem="328-j0-XFM" secondAttribute="trailing" id="h8l-nU-b49"/>
                                     <constraint firstItem="328-j0-XFM" firstAttribute="leading" secondItem="Rd2-Dq-EA8" secondAttribute="leading" id="kiw-Ya-3Ib"/>
+                                    <constraint firstItem="y9l-Nc-HoZ" firstAttribute="leading" secondItem="Rd2-Dq-EA8" secondAttribute="leading" id="m2M-9p-F1l"/>
                                     <constraint firstAttribute="trailing" secondItem="ceR-N6-Szh" secondAttribute="trailing" id="phf-Cm-sv9"/>
                                     <constraint firstItem="BZN-Yh-Ya3" firstAttribute="leading" secondItem="Rd2-Dq-EA8" secondAttribute="leading" id="qe6-YQ-E1g"/>
                                     <constraint firstAttribute="trailing" secondItem="bqg-8H-NAS" secondAttribute="trailing" id="rgP-BY-tPn"/>
@@ -144,13 +164,20 @@
                     <connections>
                         <outlet property="emailHeightConstraint" destination="nOE-AV-DoJ" id="3BC-z8-a6o"/>
                         <outlet property="emailTextField" destination="atP-ds-3B0" id="7EX-px-sMa"/>
+                        <outlet property="logInLabel" destination="E9F-Du-LEi" id="SYR-Bx-D2G"/>
                         <outlet property="passwordHeightConstraing" destination="jAh-LK-zDo" id="Wwk-Mg-BOD"/>
                         <outlet property="passwordTextField" destination="bqg-8H-NAS" id="MSR-bh-zqo"/>
+                        <outlet property="progressBar" destination="HaV-My-INO" id="Ibc-Z4-eD1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="kdL-XE-3pW" userLabel="Log In Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="logInViewTapped:" destination="BYZ-38-t0r" id="HiE-Do-mF6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-329" y="137"/>
+            <point key="canvasLocation" x="-330.39999999999998" y="136.28185907046478"/>
         </scene>
     </scenes>
     <resources>
