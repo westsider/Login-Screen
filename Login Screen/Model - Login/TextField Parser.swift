@@ -22,20 +22,16 @@ class TextFieldParser {
             try loginOr(signUp: signUp, user: user)
             callback(true)
         } catch LoginError.incompleteForm {
-            Alert.showBasic(title: "Incomplete Form", message: "Please fIll out both email and password.")
             parseDelagate?.errorFromParse(message: "Please fIll out both email and password.")
             callback(false)
         } catch LoginError.invalidEmail {
-            Alert.showBasic(title: "Invalid Email Format", message: "Please make sure you format your email correctly")
             parseDelagate?.errorFromParse(message: "Please make sure you format your email correctly")
             callback(false)
         } catch LoginError.incorrectPasswordLength {
-            Alert.showBasic(title: "Password Too Short", message: "Password should be at leat 6 characters.")
             parseDelagate?.errorFromParse(message: "Password should be at leat 6 characters.")
             callback(false)
         } catch {
             if let user = user.email {
-                Alert.showBasic(title: "Unable To Login", message: "There was an error attempting to login \(user)")
                 parseDelagate?.errorFromParse(message: "There was an error attempting to login \(user)")
                 callback(false)
             }

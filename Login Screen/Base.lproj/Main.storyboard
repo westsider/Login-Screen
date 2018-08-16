@@ -173,14 +173,14 @@
                                 </constraints>
                                 <variation key="heightClass=compact" axis="vertical" spacing="6"/>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a8o-q2-9ZV">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a8o-q2-9ZV" userLabel="Alert View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JVn-nm-fWe">
-                                        <rect key="frame" x="8" y="28" width="359" height="92"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JVn-nm-fWe" userLabel="Alert Text View">
+                                        <rect key="frame" x="16" y="50" width="343" height="70"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="92" id="vD3-V0-DCH"/>
+                                            <constraint firstAttribute="height" constant="70" id="vD3-V0-DCH"/>
                                         </constraints>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -191,9 +191,9 @@
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="JVn-nm-fWe" secondAttribute="bottom" constant="10" id="1K7-ES-MOx"/>
-                                    <constraint firstItem="JVn-nm-fWe" firstAttribute="leading" secondItem="a8o-q2-9ZV" secondAttribute="leading" constant="8" id="NPc-1q-rDl"/>
+                                    <constraint firstItem="JVn-nm-fWe" firstAttribute="leading" secondItem="a8o-q2-9ZV" secondAttribute="leading" constant="16" id="NPc-1q-rDl"/>
                                     <constraint firstAttribute="height" constant="130" id="fHe-OO-yrK"/>
-                                    <constraint firstAttribute="trailing" secondItem="JVn-nm-fWe" secondAttribute="trailing" constant="8" id="rIP-Yj-55t"/>
+                                    <constraint firstAttribute="trailing" secondItem="JVn-nm-fWe" secondAttribute="trailing" constant="16" id="rIP-Yj-55t"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -212,6 +212,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="alertTextView" destination="JVn-nm-fWe" id="eBk-Ko-GbW"/>
+                        <outlet property="alertTopConstraint" destination="eMt-jk-PvF" id="MTV-ag-EDa"/>
                         <outlet property="emailHeightConstraint" destination="nOE-AV-DoJ" id="3BC-z8-a6o"/>
                         <outlet property="emailTextField" destination="atP-ds-3B0" id="7EX-px-sMa"/>
                         <outlet property="logInLabel" destination="E9F-Du-LEi" id="SYR-Bx-D2G"/>

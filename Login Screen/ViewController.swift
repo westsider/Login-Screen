@@ -29,6 +29,8 @@ class LoginViewController: UIViewController, ChangeBttnTxtDelegate, ShowParseErr
     
     @IBOutlet weak var passwordHeightConstraing: NSLayoutConstraint!
     
+    @IBOutlet weak var alertTopConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var progressBar: UIProgressView!
     
     @IBOutlet weak var logInLabel: UILabel!
@@ -36,6 +38,8 @@ class LoginViewController: UIViewController, ChangeBttnTxtDelegate, ShowParseErr
     @IBOutlet weak var progressBarRegister: UIProgressView!
     
     @IBOutlet weak var registerLabel: UILabel!
+    
+    @IBOutlet weak var alertTextView: UITextView!
     
     let textFieldParser = TextFieldParser()
     
@@ -47,12 +51,53 @@ class LoginViewController: UIViewController, ChangeBttnTxtDelegate, ShowParseErr
         super.viewDidLoad()
         emailHeightConstraint.constant = 0
         passwordHeightConstraing.constant = 0
+        alertTopConstraint.constant = -130
         textFieldParser.parseDelagate = self
         firebaseAuthSystem.delegate = self
     }
     
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(true)
+//        showAlert(masseage: "this is an alert")
+//    }
+    
+    func showAlert(message:String) {
+        
+        alertTextView.text = message
+        alertTopConstraint.constant = 0
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0,
+            usingSpringWithDamping: 5.5,
+            initialSpringVelocity: 2.0,
+            options: [],
+            animations: {
+                self.view.layoutIfNeeded()
+        }) { (finished) in
+            if finished {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    self.hideAlert()
+                }
+            }
+        }
+    }
+    
+    func hideAlert() {
+        
+        alertTopConstraint.constant = -130
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0.0,
+            usingSpringWithDamping: 5.5,
+            initialSpringVelocity: 2.0,
+            options: [],
+            animations: {
+                self.view.layoutIfNeeded()
+        })
+    }
     func errorFromParse(message: String) {
         print("\n--------------\nmessage from protocol is \(message)\n--------------\n")
+        showAlert(message: message)
     }
     
     func changeRegisterBttnTxt(message: String) {
