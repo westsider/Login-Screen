@@ -37,12 +37,13 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var logInLabel: UILabel!
     
+    @IBOutlet weak var progressBarRegister: UIProgressView!
+    
+    @IBOutlet weak var registerLabel: UILabel!
+    
     let textFieldParser = TextFieldParser()
     
     var showFieldsState:Bool = true
-    
-    var start:CGFloat = 330
-    var finish:CGFloat = 330
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,21 +51,24 @@ class LoginViewController: UIViewController {
         passwordHeightConstraing.constant = 0
     }
     
-    @IBAction func createAccountButtonTapped(_ sender: UIButton) {
-        textFieldParser.checkInputAndLogin(signUp: true, user: User(email:  emailTextField.text!, password: passwordTextField.text!))
+    @IBAction func logInViewTapped(_ sender: UITapGestureRecognizer) {
+        startButtonAnimation(logIn: true)
+        //textFieldParser.checkInputAndLogin(signUp: false, user: User(email:  emailTextField.text!, password: passwordTextField.text!))
     }
     
-    @IBAction func logInViewTapped(_ sender: UITapGestureRecognizer) {
-        startNetworkCallAnnimation()
-        textFieldParser.checkInputAndLogin(signUp: false, user: User(email:  emailTextField.text!, password: passwordTextField.text!))
+    
+    @IBAction func registerViewTapped(_ sender: UITapGestureRecognizer) {
+        startButtonAnimation(logIn: false)
+        // textFieldParser.checkInputAndLogin(signUp: true, user: User(email:  emailTextField.text!, password: passwordTextField.text!))
     }
+    
     
     //MARK: - Handle login progress bar
-    func startNetworkCallAnnimation() {
+    func startButtonAnimation(logIn:Bool) {
         
-        logInLabel.text = "Signing In..."
+        if logIn { logInLabel.text = "Signing In..." } else { registerLabel.text = "Sending Request.." }
         view.layoutIfNeeded()
-        setProgress(percent: 0.7)
+        setProgress(percent: 0.7, logIn: logIn)
         
         UIView.animate(
             withDuration: 1.5,
@@ -73,15 +77,15 @@ class LoginViewController: UIViewController {
                 self.view.layoutIfNeeded()
         }) { (finished) in
             if finished {
-                //self.finishNetworkCall()
+                self.finishNetworkCall(login: logIn)
             }
         }
     }
     
-    func finishNetworkCall() {
+    func finishNetworkCall(login:Bool) {
         
-        logInLabel.text = "Connected"
-        setProgress(percent: 1.0)
+        if login { logInLabel.text = "Logged In" } else { registerLabel.text = "Registered" }
+        setProgress(percent: 1.0, logIn: login)
         
         UIView.animate(
             withDuration: 0.25,
@@ -94,12 +98,18 @@ class LoginViewController: UIViewController {
         })
     }
     
-    func setProgress(percent:Float) {
-        progressBar.isHidden = false
-        progressBar.progress = percent
+    func setProgress(percent:Float, logIn:Bool) {
+        if logIn {
+            progressBar.isHidden = false
+            progressBar.progress = percent
+        } else {
+            progressBarRegister.isHidden = false
+            progressBarRegister.progress = percent
+        }
+        
     }
 
-    
+    //MARK: - Handle textfield animation
     @IBAction func expandTextfieldAction(_ sender: UIButton) {
         showAndHideTextFields(now: showFieldsState)
         if showFieldsState { showFieldsState = false } else { showFieldsState = true }
