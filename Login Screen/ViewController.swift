@@ -11,7 +11,7 @@
 
 
 // add error at top of ui
-// delegates to show error
+// reset button on error
 // pan background
 
 // possible endpoints Nasa Data https://api.nasa.gov/api.html#authentication
@@ -19,7 +19,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, ChangeBttnTxtDelegate {
+class LoginViewController: UIViewController, ChangeBttnTxtDelegate, ShowParseErrorDelegate {
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -47,7 +47,12 @@ class LoginViewController: UIViewController, ChangeBttnTxtDelegate {
         super.viewDidLoad()
         emailHeightConstraint.constant = 0
         passwordHeightConstraing.constant = 0
+        textFieldParser.parseDelagate = self
         firebaseAuthSystem.delegate = self
+    }
+    
+    func errorFromParse(message: String) {
+        print("\n--------------\nmessage from protocol is \(message)\n--------------\n")
     }
     
     func changeRegisterBttnTxt(message: String) {
@@ -58,6 +63,11 @@ class LoginViewController: UIViewController, ChangeBttnTxtDelegate {
     func changeLoginBttnTxt(message: String) {
         print("\n--------------\nmessage from protocol is \(message)\n")
         finishButtonAnimation(login: true)
+    }
+    
+    func showFirebaseError(message: String) {
+        print("\n--------------\nmessage from protocol is \(message)\n")
+        //MARK: - Todo - Show error in UI
     }
     
     @IBAction func logInViewTapped(_ sender: UITapGestureRecognizer) {

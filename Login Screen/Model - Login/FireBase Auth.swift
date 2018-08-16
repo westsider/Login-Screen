@@ -13,6 +13,7 @@ import FirebaseAuth
 protocol ChangeBttnTxtDelegate: class {
     func changeRegisterBttnTxt(message:String)
     func changeLoginBttnTxt(message:String)
+    func showFirebaseError(message:String)
 }
 
 class FirebaseAuthSystem {
@@ -30,14 +31,14 @@ class FirebaseAuthSystem {
             if (user != nil) {
                 //MARK: step 3 Add the delegate method call here
                 self.delegate?.changeRegisterBttnTxt(message: "\(email) created.")
-                
                 if let user:String = user?.description {
                     debugPrint(user)
                 }
                 
             } else {
                 if let error:String = error?.localizedDescription {
-                    Alert.showBasic(title: "Warning", message: error)
+                    //Alert.showBasic(title: "Warning", message: error)
+                    self.delegate?.showFirebaseError(message: "Warning: \(error)")
                 }
             }
         }
@@ -47,14 +48,14 @@ class FirebaseAuthSystem {
         
         Auth.auth().signIn(withEmail: email, password: passWord) { (user, error) in
             if (user != nil) {
-                //Alert.showBasic(title: "Awesome", message: "\(email), you've been logged in.")
                 self.delegate?.changeLoginBttnTxt(message: "\(email), logged in.")
                 if let user:String = user?.description {
                     debugPrint(user)
                 }
             } else {
                 if let error:String = error?.localizedDescription {
-                    Alert.showBasic(title: "Warning", message: error)
+                   //Alert.showBasic(title: "Warning", message: error)
+                    self.delegate?.showFirebaseError(message: "Warning: \(error)")
                 }
             }
         }
