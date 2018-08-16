@@ -173,6 +173,29 @@
                                 </constraints>
                                 <variation key="heightClass=compact" axis="vertical" spacing="6"/>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a8o-q2-9ZV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JVn-nm-fWe">
+                                        <rect key="frame" x="8" y="28" width="359" height="92"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="92" id="vD3-V0-DCH"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="JVn-nm-fWe" secondAttribute="bottom" constant="10" id="1K7-ES-MOx"/>
+                                    <constraint firstItem="JVn-nm-fWe" firstAttribute="leading" secondItem="a8o-q2-9ZV" secondAttribute="leading" constant="8" id="NPc-1q-rDl"/>
+                                    <constraint firstAttribute="height" constant="130" id="fHe-OO-yrK"/>
+                                    <constraint firstAttribute="trailing" secondItem="JVn-nm-fWe" secondAttribute="trailing" constant="8" id="rIP-Yj-55t"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -180,8 +203,11 @@
                             <constraint firstItem="Rd2-Dq-EA8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CPv-OW-De9"/>
                             <constraint firstItem="tqP-hY-QGc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Je6-h0-mMk"/>
                             <constraint firstItem="Rd2-Dq-EA8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NLY-hS-ih5"/>
+                            <constraint firstItem="a8o-q2-9ZV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XZb-zQ-GyU"/>
+                            <constraint firstItem="a8o-q2-9ZV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="eMt-jk-PvF"/>
                             <constraint firstItem="tqP-hY-QGc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="iL1-eJ-gni"/>
                             <constraint firstItem="tqP-hY-QGc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="icp-7P-6OX"/>
+                            <constraint firstItem="a8o-q2-9ZV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jDR-7t-JvK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
