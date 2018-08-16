@@ -31,20 +31,20 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordHeightConstraing: NSLayoutConstraint!
     
-    @IBOutlet weak var mainStackViewHeight: NSLayoutConstraint!
+    //@IBOutlet weak var mainStackViewHeight: NSLayoutConstraint!
     
     let textFieldParser = TextFieldParser()
     
     var showFieldsState:Bool = true
     
-    var start:CGFloat = 300
+    var start:CGFloat = 330
     var finish:CGFloat = 330
     
     override func viewDidLoad() {
         super.viewDidLoad()
         emailHeightConstraint.constant = 0
         passwordHeightConstraing.constant = 0
-        mainStackViewHeight.constant = start
+//        mainStackViewHeight.constant = start
     }
     
     @IBAction func createAccountButtonTapped(_ sender: UIButton) {
@@ -65,11 +65,11 @@ class LoginViewController: UIViewController {
         if now {
             emailHeightConstraint.constant = 30
             passwordHeightConstraing.constant = 30
-            mainStackViewHeight.constant = finish
+           // mainStackViewHeight.constant = finish
         } else {
             emailHeightConstraint.constant = 0
             passwordHeightConstraing.constant = 0
-            mainStackViewHeight.constant = start
+            //mainStackViewHeight.constant = start
         }
         
         UIView.animate(
