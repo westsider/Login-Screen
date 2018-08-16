@@ -9,13 +9,9 @@
     import IQKeyboardManagerSwift
     IQKeyboardManager.shared.enable = true  */
 
-// add progress bar
-//      view
-//      label
-//      progress bar
-//      gesture recog
+
 // add error at top of ui
-// delegates to show progress bar or error
+// delegates to show error
 // pan background
 
 // possible endpoints Nasa Data https://api.nasa.gov/api.html#authentication
@@ -23,7 +19,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, ChangeBttnTxtDelegate {
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -43,23 +39,47 @@ class LoginViewController: UIViewController {
     
     let textFieldParser = TextFieldParser()
     
+    let firebaseAuthSystem = FirebaseAuthSystem()
+    
     var showFieldsState:Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         emailHeightConstraint.constant = 0
         passwordHeightConstraing.constant = 0
+        firebaseAuthSystem.delegate = self
+    }
+    
+    func changeRegisterBttnTxt(message: String) {
+        print("\n--------------\nmessage from protocol is \(message)\n")
+        finishButtonAnimation(login: false)
+    }
+    
+    func changeLoginBttnTxt(message: String) {
+        print("\n--------------\nmessage from protocol is \(message)\n")
+        finishButtonAnimation(login: true)
     }
     
     @IBAction func logInViewTapped(_ sender: UITapGestureRecognizer) {
         startButtonAnimation(logIn: true)
-        //textFieldParser.checkInputAndLogin(signUp: false, user: User(email:  emailTextField.text!, password: passwordTextField.text!))
+        let user = User(email:  emailTextField.text!, password: passwordTextField.text!)
+        textFieldParser.checkInputAndLogin(signUp: false, user: user) { (finished) in
+            if finished {
+                print("Finished with input check")
+                self.firebaseAuthSystem.authExistingUser(email: user.email!, passWord: user.password!)
+            }
+        }
     }
-    
     
     @IBAction func registerViewTapped(_ sender: UITapGestureRecognizer) {
         startButtonAnimation(logIn: false)
-        // textFieldParser.checkInputAndLogin(signUp: true, user: User(email:  emailTextField.text!, password: passwordTextField.text!))
+        let user = User(email:  emailTextField.text!, password: passwordTextField.text!)
+        textFieldParser.checkInputAndLogin(signUp: true, user: user) { (finished) in
+            if finished {
+                print("Finished with input check")
+                self.firebaseAuthSystem.createNewUser(email: user.email!, passWord: user.password!)
+            }
+        }
     }
     
     
@@ -77,12 +97,12 @@ class LoginViewController: UIViewController {
                 self.view.layoutIfNeeded()
         }) { (finished) in
             if finished {
-                self.finishNetworkCall(login: logIn)
+                //self.finishNetworkCall(login: logIn)
             }
         }
     }
     
-    func finishNetworkCall(login:Bool) {
+    func finishButtonAnimation(login:Bool) {
         
         if login { logInLabel.text = "Logged In" } else { registerLabel.text = "Registered" }
         setProgress(percent: 1.0, logIn: login)
@@ -135,5 +155,4 @@ class LoginViewController: UIViewController {
                 self.view.layoutIfNeeded()
         })
     }
-    
 }
