@@ -9,7 +9,6 @@
 import Foundation
 import FirebaseAuth
 
-//MARK: step 1 Add Protocol here
 protocol ChangeBttnTxtDelegate: class {
     func changeRegisterBttnTxt(message:String)
     func changeLoginBttnTxt(message:String)
@@ -18,7 +17,6 @@ protocol ChangeBttnTxtDelegate: class {
 
 class FirebaseAuthSystem {
     
-    //MARK: step 2 Create a delegate property here, don't forget to make it weak!
     weak var delegate: ChangeBttnTxtDelegate?
     
     func createNewUser(email:String, passWord:String) {
@@ -29,7 +27,6 @@ class FirebaseAuthSystem {
         Auth.auth().createUser(withEmail: email, password: passWord) { (user, error) in
             
             if (user != nil) {
-                //MARK: step 3 Add the delegate method call here
                 self.delegate?.changeRegisterBttnTxt(message: "\(email) created.")
                 if let user:String = user?.description {
                     debugPrint(user)
@@ -37,7 +34,6 @@ class FirebaseAuthSystem {
                 
             } else {
                 if let error:String = error?.localizedDescription {
-                    //Alert.showBasic(title: "Warning", message: error)
                     self.delegate?.showFirebaseError(message: "Warning: \(error)")
                 }
             }
@@ -54,13 +50,9 @@ class FirebaseAuthSystem {
                 }
             } else {
                 if let error:String = error?.localizedDescription {
-                   //Alert.showBasic(title: "Warning", message: error)
                     self.delegate?.showFirebaseError(message: "Warning: \(error)")
                 }
             }
         }
     }
 }
-
-
-

@@ -104,6 +104,7 @@
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="HaV-My-INO" firstAttribute="centerY" secondItem="y9l-Nc-HoZ" secondAttribute="centerY" id="3sI-Gb-F3f"/>
                                             <constraint firstItem="E9F-Du-LEi" firstAttribute="centerY" secondItem="y9l-Nc-HoZ" secondAttribute="centerY" id="JSF-qm-PhI"/>
@@ -113,6 +114,9 @@
                                             <constraint firstItem="HaV-My-INO" firstAttribute="width" secondItem="y9l-Nc-HoZ" secondAttribute="width" id="jhg-Qv-Qe1"/>
                                             <constraint firstItem="E9F-Du-LEi" firstAttribute="centerX" secondItem="y9l-Nc-HoZ" secondAttribute="centerX" id="zyd-vZ-gJf"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="kVq-cQ-sYl" appends="YES" id="0A9-S3-1Jv"/>
+                                        </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Owh-UT-G3A" userLabel="Register View">
                                         <rect key="frame" x="0.0" y="277.5" width="250" height="40"/>
@@ -221,15 +225,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="kdL-XE-3pW" userLabel="Log In Tap Gesture Recognizer">
-                    <connections>
-                        <action selector="logInViewTapped:" destination="BYZ-38-t0r" id="HiE-Do-mF6"/>
-                        <outlet property="delegate" destination="y9l-Nc-HoZ" id="MaL-zH-bpn"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <tapGestureRecognizer id="2ZS-E9-x1u" userLabel="Register Tap Gesture Recognizer">
                     <connections>
                         <action selector="registerViewTapped:" destination="BYZ-38-t0r" id="LKT-wB-2co"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="kVq-cQ-sYl" userLabel="Login Gesture Recognizer">
+                    <connections>
+                        <action selector="logInViewTapped:" destination="BYZ-38-t0r" id="X58-c3-Vpf"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

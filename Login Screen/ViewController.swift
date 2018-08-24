@@ -121,7 +121,6 @@ class LoginViewController: UIViewController {
             progressBarRegister.isHidden = false
             progressBarRegister.progress = percent
         }
-        
     }
 
     //MARK: - Handle textfield animation when user clicks on any textfield
