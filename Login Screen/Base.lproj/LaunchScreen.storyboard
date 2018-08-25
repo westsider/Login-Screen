@@ -21,10 +21,29 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BlueDim 2" translatesAutoresizingMaskIntoConstraints="NO" id="fAU-8K-FVM">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="kPM-R9-ekR">
+                                <rect key="frame" x="105.5" y="305.5" width="164.5" height="56.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PERILOUS ORBIT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dQd-kW-Zwo">
+                                        <rect key="frame" x="0.0" y="0.0" width="164.5" height="28"/>
+                                        <fontDescription key="fontDescription" name="PingFangHK-Regular" family="PingFang HK" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WE KNOW XR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABh-Zq-4N0">
+                                        <rect key="frame" x="30.5" y="34" width="104" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="PingFangHK-Thin" family="PingFang HK" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fAU-8K-FVM" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="3o6-7A-hTD"/>
+                            <constraint firstItem="kPM-R9-ekR" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="DB9-HL-DeW"/>
+                            <constraint firstItem="kPM-R9-ekR" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="PYX-4f-iBA"/>
                             <constraint firstItem="fAU-8K-FVM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Qxw-qG-fIN"/>
                             <constraint firstItem="fAU-8K-FVM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RyK-u7-LZ5"/>
                             <constraint firstItem="fAU-8K-FVM" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="XJf-L4-Q9r"/>

@@ -21,6 +21,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var topTitleLabel: UILabel!
+    
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -56,6 +58,12 @@ class LoginViewController: UIViewController {
         firebaseAuthSystem.delegate = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        topLabelAnimation()
+    }
+    
+    
+    
     //MARK: - handle buttons
     @IBAction func logInViewTapped(_ sender: UITapGestureRecognizer) {
         print("login tapped")
@@ -77,6 +85,28 @@ class LoginViewController: UIViewController {
             if finished {
                 print("Finished with input check")
                 self.firebaseAuthSystem.createNewUser(email: user.email!, passWord: user.password!)
+            }
+        }
+    }
+    
+    func topLabelAnimation() {
+        
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 1.5,
+            options: [.curveEaseInOut],
+            animations: {
+            self.topTitleLabel.transform =  CGAffineTransform(scaleX: 1, y: -1)
+            self.view.layoutIfNeeded()
+        }) { (finished ) in
+            print("finished 1")
+            self.view.layoutIfNeeded()
+            UIView.animate(withDuration: 0.3, delay: 0.0, options: [], animations: {
+                self.topTitleLabel.text = "Welcome to Perilous Orbit"
+                self.topTitleLabel.transform =  CGAffineTransform(scaleX: 1, y: 1);
+                self.view.layoutIfNeeded()
+            }) { (finished ) in
+                print("finished 2")
             }
         }
     }
@@ -213,3 +243,4 @@ extension LoginViewController: ChangeBttnTxtDelegate, ShowParseErrorDelegate {
         showAlert(message: message)
     }
 }
+
